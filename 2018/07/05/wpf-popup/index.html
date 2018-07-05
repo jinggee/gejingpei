@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="WPF," />
 
 
 
@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="人生充满着期待，梦想连接着未来。">
-<meta name="keywords" content="C#,wpf,html5,vue2,javascript,net core,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jingge">
-<meta property="og:url" content="http://www.geeee.top/index.html">
+<meta name="description" content="用wpf在文本框中输入关键字，然后弹窗显示过滤结果，常见的代码结构为： 12345&amp;lt;grid&amp;gt;    &amp;lt;TextBox x:name=&amp;quot;txtKeyword&amp;quot;/&amp;gt;    &amp;lt;Popup Placement=&amp;quot;Bottom&amp;quot;  PlacementTarget=&amp;quot;&amp;#123;Binding ElementName=txtKe">
+<meta name="keywords" content="WPF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WPF中Popup遮挡搜狗输入法">
+<meta property="og:url" content="http://www.geeee.top/2018/07/05/wpf-popup/index.html">
 <meta property="og:site_name" content="jingge">
-<meta property="og:description" content="人生充满着期待，梦想连接着未来。">
+<meta property="og:description" content="用wpf在文本框中输入关键字，然后弹窗显示过滤结果，常见的代码结构为： 12345&amp;lt;grid&amp;gt;    &amp;lt;TextBox x:name=&amp;quot;txtKeyword&amp;quot;/&amp;gt;    &amp;lt;Popup Placement=&amp;quot;Bottom&amp;quot;  PlacementTarget=&amp;quot;&amp;#123;Binding ElementName=txtKe">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/7A9E64C25309452C824E1375B66C338F?method=download&shareKey=ced25374ccd9cf1d57cf3a2888296088">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/E0B91E03717F449EBFA0811DD039D0E5?method=download&shareKey=f4dbd33284215fc9e7885fd1d3c65e38">
+<meta property="og:updated_time" content="2018-07-05T07:35:02.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jingge">
-<meta name="twitter:description" content="人生充满着期待，梦想连接着未来。">
+<meta name="twitter:title" content="WPF中Popup遮挡搜狗输入法">
+<meta name="twitter:description" content="用wpf在文本框中输入关键字，然后弹窗显示过滤结果，常见的代码结构为： 12345&amp;lt;grid&amp;gt;    &amp;lt;TextBox x:name=&amp;quot;txtKeyword&amp;quot;/&amp;gt;    &amp;lt;Popup Placement=&amp;quot;Bottom&amp;quot;  PlacementTarget=&amp;quot;&amp;#123;Binding ElementName=txtKe">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/7A9E64C25309452C824E1375B66C338F?method=download&shareKey=ced25374ccd9cf1d57cf3a2888296088">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://www.geeee.top/"/>
+  <link rel="canonical" href="http://www.geeee.top/2018/07/05/wpf-popup/"/>
 
 
 
 
 
-  <title>jingge</title>
+  <title>WPF中Popup遮挡搜狗输入法 | jingge</title>
   
 
 
@@ -144,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,9 +261,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -290,9 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/05/wpf-popup/" itemprop="url">WPF中Popup遮挡搜狗输入法</a></h1>
+          <h1 class="post-title" itemprop="name headline">WPF中Popup遮挡搜狗输入法</h1>
         
 
         <div class="post-meta">
@@ -375,9 +376,7 @@
       
 
       
-        
-          
-            <p>用wpf在文本框中输入关键字，然后弹窗显示过滤结果，常见的代码结构为：</p>
+        <p>用wpf在文本框中输入关键字，然后弹窗显示过滤结果，常见的代码结构为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;grid&gt;</span><br><span class="line">    &lt;TextBox x:name=&quot;txtKeyword&quot;/&gt;</span><br><span class="line">    &lt;Popup Placement=&quot;Bottom&quot;  PlacementTarget=&quot;&#123;Binding ElementName=txtKeyword&#125;&quot; StaysOpen=&quot;False&quot; IsOpen=&quot;&#123;Binding showpopup&#125;&quot;&gt;</span><br><span class="line">    &lt;/Popup&gt;</span><br><span class="line">&lt;/grid&gt;</span><br></pre></td></tr></table></figure>
 <p>然而WPF中的Popup默认是置顶的，会显示在页面的最顶层。使用输入法时，有时会出现输入法被Popup遮挡的情况，具体如下图：<br><img src="https://note.youdao.com/yws/api/personal/file/7A9E64C25309452C824E1375B66C338F?method=download&amp;shareKey=ced25374ccd9cf1d57cf3a2888296088" alt="image"></p>
 <p>解决办法：</p>
@@ -393,8 +392,6 @@
 <p><strong>下图是修改后的效果：</strong></p>
 <p><img src="https://note.youdao.com/yws/api/personal/file/E0B91E03717F449EBFA0811DD039D0E5?method=download&amp;shareKey=f4dbd33284215fc9e7885fd1d3c65e38" alt="image"></p>
 
-          
-        
       
     </div>
     
@@ -404,385 +401,70 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="jingge 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="jingge 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.geeee.top/2018/06/28/csslayout/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="jingge">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jingge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/28/csslayout/" itemprop="url">11章- CSS进行布局（学习笔记）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T18:17:22+08:00">
-                2018-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/WPF/" rel="tag"># WPF</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/28/csslayout/" class="leancloud_visitors" data-flag-title="11章- CSS进行布局（学习笔记）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="在旧版浏览器中为HTML5元素添加样式"><a href="#在旧版浏览器中为HTML5元素添加样式" class="headerlink" title="在旧版浏览器中为HTML5元素添加样式"></a>在旧版浏览器中为HTML5元素添加样式</h3><p>大多数浏览器允许对它们并不原生支持的元素添加样式。 Internet Explorer 8 及以下版本是个例外。</p>
-<p>(1) 大多数浏览器默认将它们无法识别的元素作为行内元素处理。 因此这一小段 CSS 将强制HTML5 新语义元素显示在单独的行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">article, aside, figcaption, figure, footer, header, main, nav, section &#123;</span><br><span class="line">display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(2) 有 两 种 方 式 可 以 实 现 在 InternetExplorer 9 之前的 IE 中为新的 HTML5 元素设置样式。</p>
-<ol>
-<li>在每个页面的head中加入以下代码</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">&lt;title&gt;Le Journal&lt;/title&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/lejournal.css&quot; /&gt;</span><br><span class="line">&lt;!--[if lt IE 9]&gt;</span><br><span class="line">&lt;script src=&quot;http://html5shiv. googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>把shiv文件下载到本地</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[if lt IE 9]&gt;</span><br><span class="line">&lt;script src=&quot;js/html5shiv.js&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="对默认样式进行重置或标准化"><a href="#对默认样式进行重置或标准化" class="headerlink" title="对默认样式进行重置或标准化"></a>对默认样式进行重置或标准化</h3><p>每个浏览器都有内置的默认样式表。整体上，不同浏览器提供的默认样式表是相似的， 但也存在一定的差异。 为此，开发人员在应用他们自己的 CSS 之前， 常常需要抹平这些差异。</p>
-<ul>
-<li><p>使用 CSS 重置（reset）开始主样式表</p>
-</li>
-<li><p>使用 Nicolas Gallagher 和 Jonathan Neal创建的 normalize.css 开始主样式表</p>
-</li>
-</ul>
-<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>每个元素都包含在一个看不见的盒子里面，这个盒子有内容区域，内边距，边框，外边距构成。</p>
-<p><img src="https://note.youdao.com/yws/api/personal/file/DEB455C3226042CAB08DC9F39D316403?method=download&amp;shareKey=4f27044fc05cc1fcc7c5b834bf92d1bc" alt="image"></p>
-<p>CSS 中的宽度指示的是内容区域的宽度。而元素在浏览器中的显示宽度则是内容宽度、左右内边距和左右边框的总和。</p>
-<p>如果设置了 box-sizing: border-box;，则宽度和高度就包含了除外边距以外的所有要素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">-webkit-box-sizing: border-box;</span><br><span class="line">-moz-box-sizing: border-box;</span><br><span class="line">box-sizing: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>带有-webkit- 和 -moz- 这些奇怪前缀的属性可以让这些规则在旧的 Android 和 iOS 设备上起作用，同时在Firefox 上也能正常工作。</p>
-<h3 id="控制元素的显示类型和可见性"><a href="#控制元素的显示类型和可见性" class="headerlink" title="控制元素的显示类型和可见性"></a>控制元素的显示类型和可见性</h3><p>每个元素在默认情况下，要么显示在单独的行要么显示在行内，前一种称为块级元素，后者则成为行内元素。本质是他们的display属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">display: block   // 块级元素</span><br><span class="line">display: inline  // 行内元素</span><br></pre></td></tr></table></figure>
-<p>还有一种混合显示方式称为 inlineblock，让元素与其他内容出现在同一行，同时具有块级元素的属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: inline-block</span><br></pre></td></tr></table></figure>
-<p>还可以通过设置 display 属性让元素完全不在页面上显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: none</span><br></pre></td></tr></table></figure>
-<p><strong>控制元素可见性</strong></p>
-<p>visibility 属性的主要目的是控制元素是否可见。与 display 属性不同的是，使用visibility 隐藏元素时，元素及其内容应该出现的位置会留下一片空白区域,隐藏元素的空白区域仍然会在文档流中占据位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">em &#123;</span><br><span class="line">visibility: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使元素浮动"><a href="#使元素浮动" class="headerlink" title="使元素浮动"></a>使元素浮动</h3><p>只要让一个设置了宽度的元素浮动，在正常情况下显示在它下面的内容就会流动到它的周围。</p>
-<p>浮动元素不会影响父元素或其他祖先元素的高度，因此从这一点来说，它不属于文档流的一部分。</p>
-<p>例如对如下页面结构是个典型的博客，包括图片、博文、文章页脚，默认情况下文字是显示在图片下方的。通过将图片设置为浮动，文字可环绕图片。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class=&quot;post&quot;&gt;</span><br><span class="line">    &lt;img ... class=&quot;post-photo&quot; /&gt;</span><br><span class="line">    &lt;div class=&quot;post-blurb&quot;&gt;</span><br><span class="line">        &lt;p&gt;An hour and a half ...&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;footer class=&quot;footer&quot;&gt;</span><br><span class="line">        &lt;p class=&quot;post-footer&quot;&gt;Posted ...&lt;/p&gt;</span><br><span class="line">    &lt;/footer&gt;</span><br><span class="line">&lt;/section&gt;</span><br></pre></td></tr></table></figure>
-<p>CSS:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.post-photo &#123;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><br><br><img src="https://note.youdao.com/yws/api/personal/file/D7BCD18FAF9A4FF790C62E7CA633D3C7?method=download&amp;shareKey=a3894ae5930fbe7627c60056c5092f3d" alt="image"><br><br><br>看似Section的高度受到了图像的影响，但事实并非如此。为了演示这一点，可移除博客中的一些文字。</p>
-<p><img src="https://note.youdao.com/yws/api/personal/file/45360472EAD8466892F9C385B8CFE25C?method=download&amp;shareKey=0ec840fa6a12889f01a7459b51597b8a" alt="image"><br><br><br>可以看出，尽管图像是Section的子元素，但是section却比图像更矮一些。只有普通文档流中的内容会影响父元素的高度.<br>上图页脚移到了图像的旁边，这显然不是我们想要的，正常无论内容多长，页脚都应显示在底部。</p>
-<p><strong>使用 clear 属性清除浮动效果，如果对某个元素使用该属性， 该元素和它后面的元素就会显示在浮动元素的下面。</strong></p>
-<p><img src="https://note.youdao.com/yws/api/personal/file/C290C0AA9BDE4D09BB6909D8A4AA2290?method=download&amp;shareKey=bc7a99977e7ed3d84cf3f286d151325e" alt="image"></p>
-<h3 id="对元素进行相对定位"><a href="#对元素进行相对定位" class="headerlink" title="对元素进行相对定位"></a>对元素进行相对定位</h3><p>每个元素在页面文档流中都有一个自然位置，相对于这个原始位置对元素进行移动就称为相对定位。<br>例如：<br><img src="https://note.youdao.com/yws/api/personal/file/FCF948B7459043C0AAEB9393FFE6C9D2?method=download&amp;shareKey=387375bfbbb8ee1c4e14f2158348bb75" alt="image"></p>
-<p>提示： 其他元素不会受到偏移的影响，仍然按照这个元素原来的盒子进行排列。</p>
-<h3 id="对元素进行绝对定位"><a href="#对元素进行绝对定位" class="headerlink" title="对元素进行绝对定位"></a>对元素进行绝对定位</h3><p>对元素进行绝对定位，是指元素相对于body或者最近已定位祖先元素的精确位置，可以让元素脱离文档流，绝对定位的元素不会再原先的位置上留下空白。</p>
-<p>还有一种定位方式：固定定位。当访问者滚动浏览器窗口时， 页面内容通常<br>随之上下移动。 如果对元素设置 position:fixed;，它就会固定在浏览器窗口中。当访问者上下滚动浏览器窗口时， 该元素不会随之移动，页面的其余部分仍照常滚动</p>
-<p>对元素设置 position: static 将覆盖position: absolute; 的设置。 static 是元素定位的默认值</p>
-<h3 id="在栈中定位元素"><a href="#在栈中定位元素" class="headerlink" title="在栈中定位元素"></a>在栈中定位元素</h3><p>对于定位元素， z-index 最高的数显示在最上面。</p>
-<p>z-index 属性仅对定位过的元素（即设为绝对定位、 相对定位或固定定位的元素）有效。</p>
-<h3 id="处理溢出"><a href="#处理溢出" class="headerlink" title="处理溢出"></a>处理溢出</h3><p>当元素内容超出盒子大小时会产生溢出，通过overflow可控制元素在盒子外面的部分。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">overflow: visible;   // 让盒子中的元素都可见，默认选项</span><br><span class="line">overflow: hidden;  // 隐藏元素盒子容纳不下的内容</span><br><span class="line">overflow: scroll;  // 无论元素是否需要，都在元素上添加滚动条</span><br><span class="line">overflow: auto;   // 仅当出现溢出时才出现滚动条</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.geeee.top/2018/06/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="jingge">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jingge">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/12/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T18:23:49+08:00">
-                2018-06-12
-              </time>
+              <a href="/2018/06/28/csslayout/" rel="next" title="11章- CSS进行布局（学习笔记）">
+                <i class="fa fa-chevron-left"></i> 11章- CSS进行布局（学习笔记）
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/12/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -792,10 +474,17 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -803,6 +492,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzMxMS8xMzg0NQ"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1017,6 +715,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1045,6 +747,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
