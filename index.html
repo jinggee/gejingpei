@@ -273,6 +273,229 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.geeee.top/2018/08/21/number/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jingge">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jingge">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/21/number/" itemprop="url">JS数值类型知识总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T18:26:06+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/21/number/" class="leancloud_visitors" data-flag-title="JS数值类型知识总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><ul>
+<li>十进制</li>
+<li>二进制</li>
+</ul>
+<p>以零为开头，后面接一个小写或大写的拉丁文字母B(0b或者是0B)</p>
+<ul>
+<li>八进制</li>
+</ul>
+<p>以0开头，然后是八进制数字序列(0-7) ， 如果字面值中的数值超出范围，那么前导0将被忽略，后面的数值当作十进制解析。</p>
+<ul>
+<li>十六进制</li>
+</ul>
+<p>十六进制字面值的前两位必须是 0x，后跟任何十六进制数字（0～9 及 A～F）。其中，字母 A～F可以大写，也可以小写；</p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>保存浮点数需要的内存空间是保存整数值的两倍，因此ECMAScript会不失时机的将浮点数转换为整数值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var floatNum1 = 1.; // 小数点后面没有数字——解析为 1</span><br><span class="line">var floatNum2 = 10.0; // 整数——解析为 10</span><br></pre></td></tr></table></figure>
+<p>默认会将小数点后面带有6个零以上的浮点数值转换为以e表示法表示的数值；</p>
+<p>浮点数值的最高精度是17位小数；</p>
+<h3 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h3><p>最大值Number.MAX_VALUE 1.7976931348623157e+308<br>最小值Number.MIN_VALUE 5e-324</p>
+<ul>
+<li>Number.MIN_VALUE &lt; var1 &lt; Number.MAX_VALUE , isFinite(var1)返回false, 否则返回true</li>
+<li><p>如果值超过了js数值范围，那么这个数值自动被转换成特殊的Infinity值。实际情况 Number.MAX_VALUE + 1 还等于 Number.MAX_VALUE；</p>
+</li>
+<li><p>isFinite()函数判断数值是否位有穷，参数位于最小与最大数值之间时会返回 true</p>
+</li>
+</ul>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><ul>
+<li>任何涉及 NaN 的操作（例如 NaN/10）都会返回 NaN</li>
+<li>NaN 与任何值都不相等，包括 NaN 本身</li>
+<li>实际上只有 0 除以 0 才会返回 NaN，正数除以 0 返回 Infinity，负数除以 0 返回-Infinity</li>
+<li>isNaN() 。在接收到一个值之后，会尝试将这个值转换为数值。也适用于对象，先调用对象的valueOf（）判断是否能转成数值，若不能调用toString()再测试返回值。</li>
+</ul>
+<h3 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h3><p>有 3 个函数可以把非数值转换为数值： Number()、 parseInt()和 parseFloat()</p>
+<ul>
+<li>Number()</li>
+</ul>
+<ol>
+<li>如果是boolean类型， true返回1，false返回0；</li>
+<li>如果是数值，只是简单的传入返回；</li>
+<li>如果是null，返回0</li>
+<li>如果是undefined, 返回NaN;</li>
+<li>如果是字符串，字符串如果只包含数字，则将其转换成十进制数；如果是有效的浮点格式，将其转换成对应的浮点数值；如果是二进制或十六进制将其转换成对应的十进制数值；</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alert(Number(&quot;3.14e5&quot;))；   // 314000</span><br><span class="line">alert(Number(&quot;0b1111&quot;));    // 15, 将二进制转换为十进制</span><br><span class="line">alert(Number(&quot;017&quot;));       // 17, 不会转为8进制</span><br><span class="line">alert(Number(&quot;0x1a&quot;));      // 26， 转换为16进制</span><br><span class="line">alert(Number(&quot;&quot;));          // 空字符串，返回0</span><br><span class="line">alert(Number(&quot;1a&quot;));        // 返回NaN</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>如果是对象，调用对象的valueOf()方法，然后依照前面规则转换，如果valueOf返回值是NaN，则调用toString()方法，再依照前面的规则转换返回的字符串</li>
+</ol>
+<ul>
+<li>parseInt()<br>第一个参数，要解析的数值字符串；第二个参数采用多少进制，不指定基数意味着让 parseInt()决定如何解析输入的字符串；</li>
+</ul>
+<ol>
+<li><p>如果第一个字符不是数字字符或者负号， parseInt()就会返回 NaN；</p>
+</li>
+<li><p>parseInt()转换空字符串会返回 NaN</p>
+</li>
+<li><p>如果第一个字符是数字字符， parseInt()会继续解析第二个字符，直到解析完所有后续字符或者遇到了一个非数字字符。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&quot;1234blue&quot;)    // 1234, blue忽略</span><br><span class="line"></span><br><span class="line">parseInt(&quot;22.5&quot;);   // 22</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>parseInt不能解析二进制的数值，在ES5中，也不能解析八进制的数值；</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&quot;0b1111&quot;);     // 0</span><br><span class="line">parseInt(&quot;071&quot;);    // 71,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>parseFloat()</li>
+</ul>
+<ol>
+<li>parseFloat()只解析十进制值，因此它没有用第二个参数;</li>
+<li>从第一个字符（位置 0）开始解析每个字符。而且也是一直解析到字符串末尾，或者解析到遇见一个无效的浮点数字字符为止;</li>
+<li>它始终都会忽略前导的零</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var num1 = parseFloat(&quot;1234blue&quot;); //1234 （整数）</span><br><span class="line">var num2 = parseFloat(&quot;0xA&quot;); //0</span><br><span class="line">var num3 = parseFloat(&quot;22.5&quot;); //22.5</span><br><span class="line">var num4 = parseFloat(&quot;22.34.5&quot;); //22.34</span><br><span class="line">var num5 = parseFloat(&quot;0908.5&quot;); //908.5</span><br><span class="line">var num6 = parseFloat(&quot;3.125e7&quot;); //31250000</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.geeee.top/2018/07/12/table/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -997,7 +1220,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1019,7 +1242,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
