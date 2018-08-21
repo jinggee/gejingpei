@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.geeee.top/2018/08/21/number/</loc>
-    <lastmod>2018-08-21T10:27:49.209Z</lastmod>
+    <lastmod>2018-08-21T10:33:04.107Z</lastmod>
     <data>
         <display>
         <title>JS数值类型知识总结</title>
@@ -17,6 +17,9 @@
            
              
               <breadCrumb title="前端" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="JavaScript" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
           
         </display>
     </data>
