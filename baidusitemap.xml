@@ -5,14 +5,22 @@
     
   <url>
     <loc>http://www.geeee.top/2018/11/09/vuex/</loc>
-    <lastmod>2018-11-09T06:16:20.659Z</lastmod>
+    <lastmod>2019-01-08T02:31:02.820Z</lastmod>
     <data>
         <display>
         <title>vuex学习总结</title>
         <pubTime>2018-11-09T06:15:45.000Z</pubTime>
         
+        <tag>vuex</tag>
+         
          
            
+             
+              <breadCrumb title="前端" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="Vue" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+          
         </display>
     </data>
     </url>
@@ -20,7 +28,7 @@
     
   <url>
     <loc>http://www.geeee.top/2018/08/21/number/</loc>
-    <lastmod>2018-08-21T10:33:04.107Z</lastmod>
+    <lastmod>2019-01-08T02:30:23.123Z</lastmod>
     <data>
         <display>
         <title>JS数值类型知识总结</title>
@@ -43,20 +51,69 @@
     
   <url>
     <loc>http://www.geeee.top/2018/07/12/table/</loc>
-    <lastmod>2018-07-12T09:45:09.549Z</lastmod>
+    <lastmod>2019-01-08T02:30:17.374Z</lastmod>
     <data>
         <display>
         <title>18章- 表格（学习笔记）</title>
         <pubTime>2018-07-12T09:08:50.000Z</pubTime>
         
+        <tag>CSS</tag>
+         
         <tag>html5</tag>
          
+         
+           
+             
+              <breadCrumb title="前端" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="H5" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/H5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.geeee.top/2018/06/28/csslayout/</loc>
+    <lastmod>2019-01-08T02:30:04.748Z</lastmod>
+    <data>
+        <display>
+        <title>11章- CSS进行布局（学习笔记）</title>
+        <pubTime>2018-06-28T10:17:22.000Z</pubTime>
+        
         <tag>CSS</tag>
          
          
            
              
               <breadCrumb title="前端" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="CSS" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.geeee.top/2019/01/20/js-this/</loc>
+    <lastmod>2019-01-08T02:28:53.514Z</lastmod>
+    <data>
+        <display>
+        <title>JS中this的那些事儿</title>
+        <pubTime>2019-01-20T02:27:22.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="JavaScript" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
           
         </display>
     </data>
@@ -77,26 +134,6 @@
            
              
               <breadCrumb title="WPF" url="http://www.geeee.top/categories/WPF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.geeee.top/2018/06/28/csslayout/</loc>
-    <lastmod>2018-06-28T10:19:01.810Z</lastmod>
-    <data>
-        <display>
-        <title>11章- CSS进行布局（学习笔记）</title>
-        <pubTime>2018-06-28T10:17:22.000Z</pubTime>
-        
-        <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="http://www.geeee.top/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
